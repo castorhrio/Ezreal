@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using EzrealEntity;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,15 +21,39 @@ namespace EzrealBLL.DBHelper
 
         public bool Insert<T>(T t)
         {
-            //if (t != null)
-            //{
-            //    string sql = "insert into {0} ({1}) values ({2});";
-            //    List<MySqlParameter> param = new List<MySqlParameter>();
-            //    Type type = typeof(T);
-            //    PropertyInfo[] property = type.GetProperties();
-            //    var attribute = type.GetCustomAttributes(typeof(TableNameAttribute), false).FirstOrDefault();
-            //}
-            throw new NotImplementedException();
+            if (t != null)
+            {
+                string cols = "";
+                string vals = "";
+                string sql = "insert into {0} ({1}) values ({2});";
+                List<MySqlParameter> param = new List<MySqlParameter>();
+                Type type = typeof(T);
+                PropertyInfo[] property = type.GetProperties();
+                var attribute = type.GetCustomAttributes(typeof(TableNameAttribute), false).FirstOrDefault();
+                if (attribute == null)
+                {
+                    throw new Exception("类" + type.Name + "必须添加 TableNameAttribute 属性");
+                }
+                string tableName = ((TableNameAttribute)attribute).TableName;
+                foreach(PropertyInfo pi in property)
+                {
+                    string name = pi.Name;
+                    if(cols != "")
+                    {
+                        cols += ",";
+                        vals += ",";
+                    }
+
+                    cols += name;
+                    vals += string.Format("?{0}", name);
+                    param.Add(new MySqlParameter(name, type.GetProperty(name).GetValue(t, null)));
+                }
+
+                sql = string.Format(sql, tableName, cols, vals);
+                return sqlHelper.ExecuteNonQuery(sql, param.ToArray()) > 0;
+            }
+            else
+                return false;
         }
 
         public bool Delete<T>(string columnName, object value)

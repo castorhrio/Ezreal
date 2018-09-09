@@ -74,5 +74,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EzrealEntity\EzrealEntity.csproj">
+      <Project>{5d393e20-fcde-4cc1-abdc-5b3e0fc4403e}</Project>
+      <Name>EzrealEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
