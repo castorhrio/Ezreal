@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ezreal", "Ezreal\Ezreal.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzrealBLL", "EzrealBLL\EzrealBLL.csproj", "{D06DA78E-560C-4873-9D2E-0EEE6D301776}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzrealEntity", "EzrealEntity\EzrealEntity.csproj", "{5D393E20-FCDE-4CC1-ABDC-5B3E0FC4403E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D06DA78E-560C-4873-9D2E-0EEE6D301776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06DA78E-560C-4873-9D2E-0EEE6D301776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06DA78E-560C-4873-9D2E-0EEE6D301776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D393E20-FCDE-4CC1-ABDC-5B3E0FC4403E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D393E20-FCDE-4CC1-ABDC-5B3E0FC4403E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D393E20-FCDE-4CC1-ABDC-5B3E0FC4403E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D393E20-FCDE-4CC1-ABDC-5B3E0FC4403E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,6 @@
+E:\VS\Ezreal\EzrealEntity\bin\Debug\EzrealEntity.dll
+E:\VS\Ezreal\EzrealEntity\bin\Debug\EzrealEntity.pdb
+E:\VS\Ezreal\EzrealEntity\obj\Debug\EzrealEntity.csprojAssemblyReference.cache
+E:\VS\Ezreal\EzrealEntity\obj\Debug\EzrealEntity.csproj.CoreCompileInputs.cache
+E:\VS\Ezreal\EzrealEntity\obj\Debug\EzrealEntity.dll
+E:\VS\Ezreal\EzrealEntity\obj\Debug\EzrealEntity.pdb
