@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>用户名：</p><input id=" username" placeholder="请输入用户名"/>
+<p>密码：</p><input id="password" placeholder="请输入密码"/>
+<input type="button" value="登录" onclick="login()"/>
+<input type="button" value="注册" onclick="register()"/>
+
+<script>
+    function login() {
+        var name = $("#username").val();
+        var pwd = $("#password").val();
+        if (name === "" || name === null) {
+            alert("用户名不能为空！");
+        }
+        if (pwd ==="" || pwd === null) {
+            alert("密码不能为空！");
+        }
+
+        var userinfo = new object();
+        userinfo.username = name;
+        userinfo.password = pwd;
+        $.ajax({
+            url: "@Url.Action("")",
+            type: "post",
+            dataType: "json",
+            data: { 'user': userinfo },
+            success: function (data) {
+
+            }
+        });
+    }
+
+    function register() {
+        window.location.href = "@Url.Action("Register")";
+    }
+</script>
