@@ -5,16 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzrealBLL
+namespace EzrealService
 {
-    public interface IBaseRepository
+    public interface IBaseService
     {
         bool Insert<T>(T t);
         bool Insert<T>(List<T> list);
         bool Update<T>(T t);
-        bool Delete<T>(string columnName,object value);
-        List<T> GetList<T>();
-        List<T> GetList<T>(Hashtable ht);
+        bool Delete<T>(string colName, string value);
+        T GetModel<T>(string colName, string value);
+        T GetModel<T>(Hashtable ht);
         List<T> GetList<T>(string colName, string value);
+        List<T> GetList<T>(Hashtable ht);
     }
 }
